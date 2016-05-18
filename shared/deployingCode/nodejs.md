@@ -41,7 +41,7 @@ This means your code is safely built and stored on our image registry. It should
 
 Your application will now be downloaded and executed by all the devices you have connected in you application fleet. You may have to wait about 6 minutes for the first push... So time for more tea, but don't worry, all subsequent pushes are much, much faster due to [Docker layer sharing][dockerLayerDocs]. You can see the progress of the device code updates on the device dashboard:
 
-<img src="/img/common/device/device_dashboard_during_update_generic.png" width="80%">
+<img src="/img/generic-device-dashboard/deviceLevel/firstPush/updateHalfway.png" width="80%">
 
 You should now have a node.js web server running on your device and see some logs on your dashboard. If you go to the `Actions` page for your device, you can enable a public URL, this URL is accessible from anywhere in the world.
 

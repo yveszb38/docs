@@ -11,6 +11,7 @@ It is also possible to sign up with resin.io using one of your social accounts. 
 * Facebook
 * Twitter
 
+<!-- TODO: add screenshots of signup process -->
 
 Once you are signed up head over to our Getting Started guide in the [resin.io documentation][link-to-docs].
 

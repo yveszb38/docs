@@ -14,7 +14,7 @@ __Note:__ Don't use this feature for production applications as it introduces se
 
   If your device is **online** and has **a running container** then simply click the green "Start Terminal Session" button and a terminal session should be started for you in a second or two as shown below:
 
-![A running web Terminal Session](/img/common/device/running-webterminal-session.png)
+![A running web Terminal Session](/img/generic-device-dashboard/deviceLevel/firstPush/terminalSession.png)
 
 ## Using the Terminal
 

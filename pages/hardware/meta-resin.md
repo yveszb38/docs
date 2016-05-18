@@ -2,9 +2,9 @@
 title: meta-resin
 ---
 
-# How-to add new devices to resin.io
+# Add a New Device Type to resin.io
 
-## Adding a custom board support
+## Adding Custom Board Support
 
 ### Its important to note that the instructions for [meta-resin][meta-resin] are still a draft, we still may have some detail to cover, if you have any feedback please let us know - hello@resin.io.
 
