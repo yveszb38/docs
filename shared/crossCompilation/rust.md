@@ -10,10 +10,8 @@ To get started we first install {{ $language.name }} on our development machine.
 ```
 $ curl https://sh.rustup.rs -sSf | sh
 ```
-Next up is the C cross-compilation toolchain.
-```
-$ sudo apt-get install -qq gcc-arm-linux-gnueabihf
-```
+Next up is the C cross-compilation toolchain. [crosstool-ng][crosstool-ng] is recommended for this.
+
 Now we need to install a standard set of crates that have been cross-compiled for the {{ $device.name }}. A crate is synonymous with a ‘library’ or ‘package’ in other languages.
 ```
 $ rustup target add {{ $device.rustTriple }}
@@ -45,3 +43,4 @@ This line has a lot packed into it but is really quite simple. The `before:` opt
 
 [rust-cross]:https://github.com/japaric/rust-cross
 [rustup.rs]:https://www.rustup.rs/
+[crosstool-ng]:http://crosstool-ng.org/
