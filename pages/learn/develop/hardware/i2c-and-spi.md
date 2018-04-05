@@ -22,7 +22,7 @@ title: I2C and Other Interfaces
 
 ## Raspberry Pi Family
 
-Many sensors and peripherals use either the [I²C (Inter-Integrated Circuit)][i2c-link] or the [SPI (Serial Peripheral Interface)][spi-link] to communicate with the CPU. In most linux environments, using this kind of low level communication requires enabling a kernel module. In resin.io containers this can be done in a similar way because the containers are run in `--priviledged` mode.
+Many sensors and peripherals use either the [I²C (Inter-Integrated Circuit)][i2c-link] or the [SPI (Serial Peripheral Interface)][spi-link] to communicate with the CPU. In most linux environments, using this kind of low level communication requires enabling a kernel module. In {{ $names.company.lower }} containers this can be done in a similar way because the containers are run in `--priviledged` mode.
 
 ### I2C
 
@@ -43,7 +43,7 @@ CMD modprobe i2c-dev && python /app/demo.py
 
 After your first push, the code will most likely throw an error caused by the modules not being loaded. If this is the case, simply reboot the pi and the modules should be loaded.
 
-__NOTE:__ A few places will talk about adding the modules to the /etc/modules file so that they are there on boot. This will not work on the resin.io system because that file is not mapped to the host OS.
+__NOTE:__ A few places will talk about adding the modules to the /etc/modules file so that they are there on boot. This will not work on the {{ $names.company.lower }} system because that file is not mapped to the host OS.
 
 To get you started, here is an [example][i2c-example] that uses i2c to communicate with the [ADS1115][ads1115-link] analog-to-digital converter to allow the Raspberry Pi to read analog signals, which is useful for a bunch of sensor types.
 
@@ -97,7 +97,7 @@ To demonstrate this functionality, you can push this project (https://github.com
 
 ### Raspberry Pi camera module
 
-Depending on the version of your resinOS, the system contains different version of the Raspberry Pi firmware, and you need to apply slightly different settings. In both cases you can either modify `config.txt` on the `resin-boot` partition of your SD card, or add the settings remotely by using `RESIN_HOST_CONFIG_variablename` settings in your [fleet or device configuration](/management/env-vars/).
+Depending on the version of your {{ $names.os.lower }}, the system contains different version of the Raspberry Pi firmware, and you need to apply slightly different settings. In both cases you can either modify `config.txt` on the `resin-boot` partition of your SD card, or add the settings remotely by using `RESIN_HOST_CONFIG_variablename` settings in your [fleet or device configuration](/management/env-vars/).
 
 **resinOS 1.16.0 and newer**
 
@@ -215,9 +215,9 @@ With this module you should be able to basic GPIO and analog-to-digital conversi
 
 __Note:__ The ADC voltage is only rated to 1.8V, if you apply more you risk frying the pin.
 
-### Capemgr support on Resin.io devices
+### Capemgr support on {{ $names.company.upper }} devices
 
-__Warning:__ Capemgr is only supported in resin.io BBB devices with a 4.1 linux kernel. This kernel was only enabled in production on `25-09-2015`. If you don't know which kernel you are running, open a webterminal to your BBB and run `uname -a`.
+__Warning:__ Capemgr is only supported in {{ $names.company.lower }} BBB devices with a 4.1 linux kernel. This kernel was only enabled in production on `25-09-2015`. If you don't know which kernel you are running, open a webterminal to your BBB and run `uname -a`.
 
 ##### Loading a Cape
 ```Bash

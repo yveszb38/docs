@@ -1,6 +1,6 @@
 <!-- deploying Code to devices -->
 
-Now that we have a device or two connected to a resin.io application, let's deploy some code and actually start building something.
+Now that we have a device or two connected to a {{ $names.company.lower }} application, let's deploy some code and actually start building something.
 
 A nice first project to get your feet wet is a simple [Express.js][expressjs] web server which will serve a static page on port `:80`. All the project source code can be found [here on github] [simple-server-node-link].
 
@@ -21,9 +21,9 @@ $ git remote add resin <USERNAME>@git.resin.io:<USERNAME>/<APPNAME>.git
 ```
 __Note:__ On other git clients there may be an alternative way to add a remote repository.
 
-So now we have set up a reference in our local git repository (the one on our development computer) to the resin.io application remote repository. So when we push new changes to this remote repository it will get compiled and built on our servers and deployed to every device in the application fleet.
+So now we have set up a reference in our local git repository (the one on our development computer) to the {{ $names.company.lower }} application remote repository. So when we push new changes to this remote repository it will get compiled and built on our servers and deployed to every device in the application fleet.
 
-__Warning:__ The resin.io git repository **is not** intended as a code hosting solution, and we cannot guarantee the persistence of data in resin.io git remotes.
+__Warning:__ The {{ $names.company.lower }} git repository **is not** intended as a code hosting solution, and we cannot guarantee the persistence of data in {{ $names.company.lower }} git remotes.
 
 Now to deploy this code to all device(s) in the application just run the command:
 ```shell

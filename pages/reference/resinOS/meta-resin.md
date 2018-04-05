@@ -1,6 +1,6 @@
 ---
 title: Custom board support
-excerpt: Instructions for adding boards not currently supported by resin.io
+excerpt: Instructions for adding boards not currently supported by {{ $names.company.lower }}
 
 ---
 

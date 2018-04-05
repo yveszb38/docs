@@ -1,11 +1,11 @@
 ---
-title: Resin.io base images
-excerpt: Docker images maintained by resin.io
+title: {{ $names.company.upper }} base images
+excerpt: Docker images maintained by {{ $names.company.lower }}
 ---
 
-# Resin.io base images 
+# {{ $names.company.upper }} base images 
 
-This page contains all the information about the images maintained on the resin.io Docker Hub registry.
+This page contains all the information about the images maintained on the {{ $names.company.lower }} Docker Hub registry.
 
 ## <a name="image-tree"></a>Resin Image Trees
 
@@ -74,7 +74,7 @@ can be run on your machine and there will be no `Exec format error`, which is th
 
 ##### Entry script
 
-There is an entry script (`/usr/bin/entry.sh`) as the ENTRYPOINT in every Resin base images. It will perform tasks such as: start udev, set the hostname (ResinOS 1.x devices only), mount `/dev/` and trigger the init system before starting your application. Here is an example of [the entry script](https://github.com/resin-io-library/base-images/blob/master/debian/entry.sh). You can specify your own entrypoint if needed by adding `ENTRYPOINT` to the Dockerfile.
+There is an entry script (`/usr/bin/entry.sh`) as the ENTRYPOINT in every Resin base images. It will perform tasks such as: start udev, set the hostname ({{ $names.os.upper }} 1.x devices only), mount `/dev/` and trigger the init system before starting your application. Here is an example of [the entry script](https://github.com/resin-io-library/base-images/blob/master/debian/entry.sh). You can specify your own entrypoint if needed by adding `ENTRYPOINT` to the Dockerfile.
 
 ##### Notice:
 

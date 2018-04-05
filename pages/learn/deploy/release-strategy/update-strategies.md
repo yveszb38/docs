@@ -1,11 +1,11 @@
 ---
 title: Application update strategy
-excerpt: Choosing an update strategy for your resin.io devices
+excerpt: Choosing an update strategy for your {{ $names.company.lower }} devices
 ---
 
 # Controlling the update strategy
 
-With the resin.io device supervisor version 1.3, we added the ability to choose the update strategy on devices, that is, the order and way in which the steps to perform an update are executed. You can check whether your Supervisor has the appropriate version in the "Agent version" entry in the device dashboard page.
+With the {{ $names.company.lower }} device supervisor version 1.3, we added the ability to choose the update strategy on devices, that is, the order and way in which the steps to perform an update are executed. You can check whether your Supervisor has the appropriate version in the "Agent version" entry in the device dashboard page.
 These update strategies allow users to choose between three modes that are suited for different applications, depending on available resources and the possible need to have a container running at all times.
 
 Update strategies are selected using [Fleet Configuration environment variables](/management/env-vars). The two variables that are involved are

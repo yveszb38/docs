@@ -2,6 +2,7 @@ path = require('path')
 
 config = require('./index')
 links = require('./links')
+names = require('./names')
 
 root = path.resolve(__dirname, '..')
 
@@ -15,6 +16,7 @@ module.exports = {
   metaExtra: (fileName) ->
     improveDocsLink: if fileName.match(config.dynamicDocs) then "#{config.editPageLink}/#{config.partialsDir}" else "#{config.editPageLink}/#{config.docsSourceDir}/#{fileName}"
     $links: links
+    $names: names
   layoutLocals: config.layoutLocals
   parseNav: true
   serializeNav: path.join(root, 'server', 'nav.json')

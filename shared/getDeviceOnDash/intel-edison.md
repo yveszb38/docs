@@ -12,7 +12,7 @@ __Warning:__ There is a known issue with the flash tool and OSX 10.11 - El Capti
 
 __Note:__ Before you start this step, ensure that your Edison is not plugged into your Computer.
 
-On your computer open the newly installed [Flash Tool Lite][flash-tool-link]. Select the blue browse button in the top right hand corner and browse to the folder where you had previously extracted resinOS. This folder should be called something like `resin-myFleet-0.1.0-0.0.14`. In this folder you should be able to find and select a file called `FlashEdison.json`.
+On your computer open the newly installed [Flash Tool Lite][flash-tool-link]. Select the blue browse button in the top right hand corner and browse to the folder where you had previously extracted {{ $names.os.lower }}. This folder should be called something like `resin-myFleet-0.1.0-0.0.14`. In this folder you should be able to find and select a file called `FlashEdison.json`.
 
 ![browse to resin OS folder](/img/edison/browse-select-flash-tool.png)
 
@@ -47,7 +47,7 @@ To use this method, you will need to have MacPorts installed on your system. Onc
 sudo port install dfu-util usbutils coreutils && sudo port activate dfu-util
 ```
 
-Make sure the Intel Edison is unplugged from your system, then unzip the downloaded resinOS image. Navigate to the unzipped directory and run the following:
+Make sure the Intel Edison is unplugged from your system, then unzip the downloaded {{ $names.os.lower }} image. Navigate to the unzipped directory and run the following:
 
 ```shell
 sudo chmod +x ./flashall.sh

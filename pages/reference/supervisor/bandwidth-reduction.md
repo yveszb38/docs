@@ -4,7 +4,7 @@ title: Reduce bandwidth usage
 
 # Reduce bandwidth usage
 
-In order to provide our users with a clear view of their devices, the resin.io device supervisor constantly keeps our API informed about the devices' conditions and applies any changes, like downloading new application updates or environment variable changes by negotiating with our API. While a quick reflection of actions is great during development, it comes at a cost of increased data usage.
+In order to provide our users with a clear view of their devices, the {{ $names.company.lower }} device supervisor constantly keeps our API informed about the devices' conditions and applies any changes, like downloading new application updates or environment variable changes by negotiating with our API. While a quick reflection of actions is great during development, it comes at a cost of increased data usage.
 
 In order to give our power users control over data flow we enabled a few RESIN [config environment variables](/management/env-vars).
 

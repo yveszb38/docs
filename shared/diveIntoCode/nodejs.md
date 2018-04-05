@@ -5,7 +5,7 @@ So in the root directory of our project we see a number of files, the most impor
 * `package.json` : This is a [JSON][whatIsJson] file that describes how our node.js project is built, what dependencies it has and it's entry point. Read more about it on the [npm docs][npmDocs].
 * `server.js` : This is the entry point to our application code and is where all the fun happens!
 
-The most important part of a resin.io project repo is usually the `Dockerfile` or `Dockerfile.template`. The `.template` version allows you to define template variables like `%%RESIN_MACHINE_NAME%%` which enables you to push the same repository to multiple different architecture fleets.
+The most important part of a {{ $names.company.lower }} project repo is usually the `Dockerfile` or `Dockerfile.template`. The `.template` version allows you to define template variables like `%%RESIN_MACHINE_NAME%%` which enables you to push the same repository to multiple different architecture fleets.
 
 If we look at our `Dockerfile.template`, the first thing we see is:
 ```Dockerfile
@@ -39,7 +39,7 @@ As the comments say, `WORKDIR` set our working directory for any `RUN`, `COPY` o
 
 We can now build all our node.js modules and dependencies, this is done using the `RUN` command. We also build with the `--production` flag and clear the cache in the same step in order to keep the final image size smaller.
 ```Dockerfile
-# This install npm dependencies on the resin.io build server,
+# This install npm dependencies on the {{ $names.company.lower }} build server,
 # making sure to clean up the artifacts it creates in order to reduce the image size.
 RUN JOBS=MAX npm install --production --unsafe-perm && npm cache clean && rm -rf /tmp/*
 
@@ -63,7 +63,7 @@ In our `package.json` the parts to focus on are our "scripts" and "dependencies"
 {
   "name": "simple-server-node",
   "version": "1.0.0",
-  "description": "A simple Expressjs Web server on resin.io",
+  "description": "A simple Expressjs Web server on {{ $names.company.lower }}",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

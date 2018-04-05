@@ -4,7 +4,7 @@ So in the root directory of our project we see a number of files, the most impor
 * `Dockerfile.template` : This is basically a recipe file on how to build and run our application container.
 * `hello.cpp` : This is the entry point to our application code and is where all the fun happens!
 
-The most important part of a resin.io project repo is usually the `Dockerfile` or `Dockerfile.template`. The `.template` version allows you to define template variables like `%%RESIN_MACHINE_NAME%%` which enables you to push the same repository to multiple different architecture fleets.
+The most important part of a {{ $names.company.lower }} project repo is usually the `Dockerfile` or `Dockerfile.template`. The `.template` version allows you to define template variables like `%%RESIN_MACHINE_NAME%%` which enables you to push the same repository to multiple different architecture fleets.
 
 If we look at our `Dockerfile.template`, the first thing we see is:
 ```Dockerfile

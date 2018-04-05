@@ -2,11 +2,11 @@
 <!--add an anchor here to redirect old links-->
 <a name="adding-your-first-device"></a>
 
-To connect with resin.io, your **{{ $device.name }}** will need a resinOS image that is configured for your application and your network. Start by clicking *Add device* in your application dashboard:
+To connect with {{ $names.company.lower }}, your **{{ $device.name }}** will need a {{ $names.os.lower }} image that is configured for your application and your network. Start by clicking *Add device* in your application dashboard:
 
 <img src="/img/common/app/add_device.png" width="100%">
 
-A list of available resinOS versions is shown in the dropdown. In general, the most recent version is recommend. You can also select whether you would prefer a *Development* or *Production* edition with a toggle:
+A list of available {{ $names.os.lower }} versions is shown in the dropdown. In general, the most recent version is recommend. You can also select whether you would prefer a *Development* or *Production* edition with a toggle:
 
 <img src="/img/common/app/version.png" width="60%">
 

@@ -1,6 +1,6 @@
 ---
 title: Advanced boot settings
-excerpts: Configuration options to expose more device functionality to resinOS
+excerpts: Configuration options to expose more device functionality to {{ $names.os.lower }}
 ---
 
 # Advanced boot settings

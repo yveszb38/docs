@@ -38,9 +38,9 @@ If so, simply click __Ignore__ - it means that the file system applied to your E
 
 You should now have a Edison running the factory default Yocto build from Intel.
 
-If you've had to follow this guide due to an issue with resin.io, please let us know so we can improve the experience!
+If you've had to follow this guide due to an issue with {{ $names.company.lower }}, please let us know so we can improve the experience!
 
-**Drop us a note at [resin.io/contact](https://resin.io/contact/)**
+**Drop us a note at [{{ $names.company.lower }}/contact](https://resin.io/contact/)**
 
 [edison-dl-page]:https://software.intel.com/en-us/iot/hardware/edison/downloads
 [dl-link]:http://downloadmirror.intel.com/25028/eng/edison-image-ww25.5-15.zip

@@ -1,12 +1,12 @@
 ---
 title: AWS IoT integration
-excerpt: Get started with the Amazon AWS IoT platform and resin.io
+excerpt: Get started with the Amazon AWS IoT platform and {{ $names.company.lower }}
 thumbnail: /img/integrations/aws/AWS_IoT_resources.png
 ---
 
 # AWS IoT Integration
 
-The Amazon Web Services Internet-of-Things (AWS IoT) service enables bi-directional communication between Internet-connected things, such as sensors, embedded devices, or appliances, and other services on the AWS cloud, such as cloud servers, databases, analytics and more. This document provides an overview how to use [AWS IoT](https://console.aws.amazon.com/iot/home) component with resin.io to deploy IoT devices on the AWS IoT platform.
+The Amazon Web Services Internet-of-Things (AWS IoT) service enables bi-directional communication between Internet-connected things, such as sensors, embedded devices, or appliances, and other services on the AWS cloud, such as cloud servers, databases, analytics and more. This document provides an overview how to use [AWS IoT](https://console.aws.amazon.com/iot/home) component with {{ $names.company.lower }} to deploy IoT devices on the AWS IoT platform.
 
 ## Configuring AWS IoT
 
@@ -26,7 +26,7 @@ AWS IoT is available in [selected regions](http://docs.aws.amazon.com/general/la
 
 #### Manual Thing Creation
 
-Manual device creation involves setting up all relevant configuration either in the web console, or through the CLI. Select your thing type (optionally), and create a new thing for each of the physical devices you would like to use (that is for each of the boards you will be provisioning on resin.io).
+Manual device creation involves setting up all relevant configuration either in the web console, or through the CLI. Select your thing type (optionally), and create a new thing for each of the physical devices you would like to use (that is for each of the boards you will be provisioning on {{ $names.company.lower }}).
 
 ![AWS IoT Resources](/img/integrations/aws/AWS_IoT_resources.png)
 
@@ -40,27 +40,27 @@ After this steps, you'll have all information and setup required to connect a ph
 
 #### Automatic Thing Creation
 
-All of AWS can be controlled over API calls, and AWS itself can be used to automate the creation of the things, certificates, policies, and other settings. Such automatic setups would tap into your resin.io resources, and when a new device is created, would automatically set up the required resources, and would notify the device of its credentials.
+All of AWS can be controlled over API calls, and AWS itself can be used to automate the creation of the things, certificates, policies, and other settings. Such automatic setups would tap into your {{ $names.company.lower }} resources, and when a new device is created, would automatically set up the required resources, and would notify the device of its credentials.
 
 One such possible automatic setup example, [resin-aws-lambda](https://github.com/resin-io-projects/resin-aws-lambda) uses the [AWS Lambda](https://aws.amazon.com/documentation/lambda/) platform to run "serverless" AWS provisioning.
 
 All automatic provisioning method would use the [AWS IoT API](http://docs.aws.amazon.com/iot/latest/apireference/Welcome.html).
 
-## Configuring Resin.io
+## Configuring {{ $names.company.upper }}
 
-Go to your [resin.io dashboard](https://dashboard.resin.io) and create a new application with the physical device type you are using.
+Go to your [{{ $names.company.lower }} dashboard](https://dashboard.resin.io) and create a new application with the physical device type you are using.
 
 The next step depends on whether you are doing manual or automatic device creation on AWS IoT.
 
 ### Manual Device setup
 
-If you are using manual device creation, then you must have set up a corresponding thing and certificate for each resin.io device. In this case you will likely need a number of environment variables defined, some [application-wide environment variable](/management/env-vars/#application-wide) if the setting applies for all devices (such as AWS region), and some [per-device](/management/env-vars/#per-device) (such as authentication credentials). The environment variables will be available from the code running on your device to correctly connect to AWS IoT.
+If you are using manual device creation, then you must have set up a corresponding thing and certificate for each {{ $names.company.lower }} device. In this case you will likely need a number of environment variables defined, some [application-wide environment variable](/management/env-vars/#application-wide) if the setting applies for all devices (such as AWS region), and some [per-device](/management/env-vars/#per-device) (such as authentication credentials). The environment variables will be available from the code running on your device to correctly connect to AWS IoT.
 
 The environment variables can not contain new-line characters (they can only be a single line), while the AWS IoT private key and certificates do use information in multiple lines. Some possible tricks are [base64 encoding](https://en.wikipedia.org/wiki/Base64) the credentials before adding them as an environment variable and decoding it within your application software.
 
 ### Automatic Device setup
 
-Automatic device setup would involve the newly provisioned resin.io device notifying your AWS IoT setup service (from the earlier steps), which in turns sets up the credentials, and for example sets them up as environment variables for the device. An example of this automatic setup, working with the "resin-aws-lambda" above, is [resin-aws-device](https://github.com/resin-io-projects/resin-aws-device). The automatic setup procedure generally depends on your device software and the service you use for AWS provisioning.
+Automatic device setup would involve the newly provisioned {{ $names.company.lower }} device notifying your AWS IoT setup service (from the earlier steps), which in turns sets up the credentials, and for example sets them up as environment variables for the device. An example of this automatic setup, working with the "resin-aws-lambda" above, is [resin-aws-device](https://github.com/resin-io-projects/resin-aws-device). The automatic setup procedure generally depends on your device software and the service you use for AWS provisioning.
 
 ## Programming
 
@@ -74,7 +74,7 @@ The [boto3](https://pypi.python.org/pypi/boto3/) package is a Python SDK for AWS
 
 For easy communication between the devices and AWS IoT an MQTT library is recommended, such as [paho-mqtt](https://pypi.python.org/pypi/paho-mqtt).
 
-Here are a few notes using Python with resin.io devices. Starting from a [Dockerfile templates](/deployment/docker-templates/), build on the resin default Python images, for example:
+Here are a few notes using Python with {{ $names.company.lower }} devices. Starting from a [Dockerfile templates](/deployment/docker-templates/), build on the resin default Python images, for example:
 
 ```Dockerfile
 FROM resin/%%RESIN_MACHINE_NAME%%-python
@@ -154,7 +154,7 @@ The [AWS Javascript SDK](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS.
 
 For a complete Node.js example, please see the pair of [resin-aws-lambda](https://github.com/resin-io-projects/resin-aws-lambda) and [resin-aws-device](https://github.com/resin-io-projects/resin-aws-device) repositories!
 
-Here are a few notes using the [AWS IoT device SDK](https://github.com/aws/aws-iot-device-sdk-js) with resin.io devices. Using [Dockerfile templates](/deployment/docker-templates/), start from the resin default Node.js images, for example:
+Here are a few notes using the [AWS IoT device SDK](https://github.com/aws/aws-iot-device-sdk-js) with {{ $names.company.lower }} devices. Using [Dockerfile templates](/deployment/docker-templates/), start from the resin default Node.js images, for example:
 
 ```Dockerfile
 FROM resin/%%RESIN_MACHINE_NAME%%-node:latest

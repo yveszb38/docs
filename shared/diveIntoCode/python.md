@@ -5,7 +5,7 @@ So in the root directory of our project we see a number of files, the most impor
 * `requirements.txt` : This file defines all the python dependencies and their versions which will be in stalled by [pip][pip-package-manager]
 * `src/main.py` : This is the entry point to our application code and is where all the fun happens!
 
-The most important part of a resin.io project repo is usually the `Dockerfile` or `Dockerfile.template`. The `.template` version allows you to define template variables like `%%RESIN_MACHINE_NAME%%` which enables you to push the same repository to multiple different architecture fleets.
+The most important part of a {{ $names.company.lower }} project repo is usually the `Dockerfile` or `Dockerfile.template`. The `.template` version allows you to define template variables like `%%RESIN_MACHINE_NAME%%` which enables you to push the same repository to multiple different architecture fleets.
 
 If we look at our `Dockerfile.template`, the first thing we see is:
 ```Dockerfile
@@ -37,7 +37,7 @@ As the comments say, `WORKDIR` set our working directory for any `RUN`, `COPY` o
 
 We can now build all our python modules and dependencies, this is done using the `RUN` command.
 ```Dockerfile
-# pip install python deps from requirements.txt on the resin.io build server
+# pip install python deps from requirements.txt on the {{ $names.company.lower }} build server
 RUN pip install -r /requirements.txt
 
 # This will copy all files in our root to the working  directory in the container

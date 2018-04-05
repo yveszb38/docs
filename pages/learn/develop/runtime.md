@@ -1,6 +1,6 @@
 ---
 title: Communicate outside the container
-excerpt: Talk to the host OS, supervisor, and network from within a resin.io container
+excerpt: Talk to the host OS, supervisor, and network from within a {{ $names.company.lower }} container
 thumbnail: /img/common/device/running-webterminal-session.png
 ---
 
@@ -16,19 +16,19 @@ Inside your running container, you'll have access to a number of `RESIN_` namesp
 
 |    Variable   	| Description 	|
 |:----------:	    |:-----------:	|
-| `RESIN_DEVICE_UUID` 	      |  The unique identification number for the device. This is used to identify it on resin.io	|
-| `RESIN_APP_ID` 	            |  ID number of the resin.io application the device is associated. 	|
-| `RESIN_APP_NAME`            |  The name of the resin.io application the device is associated with. |
+| `RESIN_DEVICE_UUID` 	      |  The unique identification number for the device. This is used to identify it on {{ $names.company.lower }}	|
+| `RESIN_APP_ID` 	            |  ID number of the {{ $names.company.lower }} application the device is associated. 	|
+| `RESIN_APP_NAME`            |  The name of the {{ $names.company.lower }} application the device is associated with. |
 | `RESIN_APP_RELEASE`         |  The commit hash of the deployed application version. |
 | `RESIN_DEVICE_NAME_AT_INIT` |  The name of the device on first initialisation. |
 | `RESIN_DEVICE_TYPE`         |  The type of device the application is running on. |
-| `RESIN` 	                  |  The `RESIN=1` variable can be used by your software to detect that it is running on a resin.io device. 	|
+| `RESIN` 	                  |  The `RESIN=1` variable can be used by your software to detect that it is running on a {{ $names.company.lower }} device. 	|
 | `RESIN_SUPERVISOR_VERSION` 	|  The current version of the supervisor agent running on the device.	|
 | `RESIN_SUPERVISOR_API_KEY` 	|  Authentication key for the supervisor API. This makes sure requests to the supervisor are only coming from containers on the device. See the [Supervisor API reference][supervisor-api-link]	for detailed usage.|
 | `RESIN_SUPERVISOR_ADDRESS` 	|  The network address of the supervisor API. Default: `http://127.0.0.1:48484`	|
 | `RESIN_SUPERVISOR_HOST` 	  |  The IP address of the supervisor API.	Default: `127.0.0.1`|
 | `RESIN_SUPERVISOR_PORT` 	  |  The network port number for the supervisor API. Default: `48484`	|
-| `RESIN_API_KEY` 	          |  API key which can be used to authenticate requests to the resin.io backend. Can be used with resin SDK on the device. **WARNING** This API key gives the code full user permissions, so can be used to delete and update anything as you would on the Dashboard.  	|
+| `RESIN_API_KEY` 	          |  API key which can be used to authenticate requests to the {{ $names.company.lower }} backend. Can be used with resin SDK on the device. **WARNING** This API key gives the code full user permissions, so can be used to delete and update anything as you would on the Dashboard.  	|
 | `RESIN_HOST_OS_VERSION`     |  The version of the resin host OS. |
 | `RESIN_DEVICE_RESTART` 	    |  This is a internal mechanism for restarting containers and can be ignored as its not very useful to application code.  Example: `1.13.0`	|
 
@@ -54,15 +54,15 @@ RESIN_SUPERVISOR_PORT=48484
 
 ### Dbus communication with host OS
 
-In some cases its necessary to communicate with the host OS systemd to perform actions on the host, for example changing the hostname. To do this you can use [dbus][dbus-link]. In order to ensure that you are communicating to the host OS systemd and not the systemd in your container it is important to set `DBUS_SYSTEM_BUS_ADDRESS` for all dbus communication. The setting of that environment variable is different for older and newer devices (based on the resin.io supervisor version), choose the line that is correct for your device's OS version (can be found in your device dashboard):
+In some cases its necessary to communicate with the host OS systemd to perform actions on the host, for example changing the hostname. To do this you can use [dbus][dbus-link]. In order to ensure that you are communicating to the host OS systemd and not the systemd in your container it is important to set `DBUS_SYSTEM_BUS_ADDRESS` for all dbus communication. The setting of that environment variable is different for older and newer devices (based on the {{ $names.company.lower }} supervisor version), choose the line that is correct for your device's OS version (can be found in your device dashboard):
 
 ```
-# for resin.io supervisor versions 1.7.0 and newer (both resinOS 1.x and 2.x) use this version:
+# for {{ $names.company.lower }} supervisor versions 1.7.0 and newer (both {{ $names.os.lower }} 1.x and 2.x) use this version:
 DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 ```
 
 ```
-# for resin.io supervisor before 1.7.0 use this version:
+# for {{ $names.company.lower }} supervisor before 1.7.0 use this version:
 DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host_run/dbus/system_bus_socket
 ```
 
@@ -170,12 +170,12 @@ Anything written from the application to `stdout` and `stderr` should appear on 
 
 ### Exposed ports
 
-Resin.io devices expose all ports by default, meaning you can run applications
+{{ $names.company.upper }} devices expose all ports by default, meaning you can run applications
 which listen on any port without issue. There is no need to have the Docker `EXPOSE` command in your `Dockerfile`.
 
 ### Public device URLS
 
-Resin.io currently exposes port 80 for web forwarding. To enable web forwarding on a specific device, navigate to the device's **actions** tab on the resin.io dashboard and select the `Enable a public URL for this device` checkbox. For more information about device URLS you can head over to the [Device Management Page](/management/devices#enable-public-device-url)
+{{ $names.company.upper }} currently exposes port 80 for web forwarding. To enable web forwarding on a specific device, navigate to the device's **actions** tab on the {{ $names.company.lower }} dashboard and select the `Enable a public URL for this device` checkbox. For more information about device URLS you can head over to the [Device Management Page](/management/devices#enable-public-device-url)
 
 ![Enable device url](/img/screenshots/device-url-new.png)
 
@@ -200,7 +200,7 @@ var server = app.listen(80, function () {
 ```
 
 ### Using DNS resolvers in your container
-In the resin.io host OS [dnsmasq][dnsmasq-link] is used to manage DNS since resinOS 1.1.2. This means that if you have dnsmasq or other DNS resolvers such as [bind9](http://www.bind9.org/) running in your container, it can potentially cause problems because they usually try to bind to `0.0.0.0` which interferes with the host dnsmasq. To get around this you need to add `bind-interfaces` to your dnsmasq configuration in your container, or make sure your server only binds to external IPs, and there shouldn't be conflicts anymore.
+In the {{ $names.company.lower }} host OS [dnsmasq][dnsmasq-link] is used to manage DNS since {{ $names.os.lower }} 1.1.2. This means that if you have dnsmasq or other DNS resolvers such as [bind9](http://www.bind9.org/) running in your container, it can potentially cause problems because they usually try to bind to `0.0.0.0` which interferes with the host dnsmasq. To get around this you need to add `bind-interfaces` to your dnsmasq configuration in your container, or make sure your server only binds to external IPs, and there shouldn't be conflicts anymore.
 
 ## Storage
 

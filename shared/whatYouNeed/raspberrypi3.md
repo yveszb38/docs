@@ -4,7 +4,7 @@
 * A micro USB cable.
 * **[Optional]** An ethernet cable.
 * **[Optional]** A [2A micro USB power supply][psu].
-* A [resin.io account][link-to-signup].
+* A [{{ $names.company.lower }} account][link-to-signup].
 
 [rpi3B]:https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 [rpi3B+]:https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/

@@ -54,6 +54,7 @@ module.exports =
   dynamicDocs: DYNAMIC_DOCS
   editPageLink: GITHUB_EDIT_PAGE_LINK
   links: require('./links')
+  names: require('./names')
   layoutLocals:
     mainSiteUrl: MAIN_SITE
     dashboardUrl: DASHBOARD_SITE

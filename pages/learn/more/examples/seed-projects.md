@@ -2,7 +2,7 @@
 title: Seed Projects
 ---
 
-# Resin.io Seed Projects
+# {{ $names.company.upper }} Seed Projects
 
 ## Programming Language Seed Projects
 
@@ -19,7 +19,7 @@ customisation.
 
 ## Installing a Project
 
-To install a project you will need a [resin.io][resin] account with an
+To install a project you will need a [{{ $names.company.lower }}][resin] account with an
 application set up ready to receive code. See the
 [getting started][getting-started] and [deployment][deploy] guides for details
 on how to do this.
@@ -63,7 +63,7 @@ This seed project runs a simple [Flask][flask-python-link] server on port `:80`.
 Hello World written in [C#][csharp] using a
 [custom Dockerfile][csharp-dockerfile].
 
-Martin is also currently building out a series of [.net][dotnet] resin.io examples, you can view his progress [here][dotnet-lib]
+Martin is also currently building out a series of [.net][dotnet] {{ $names.company.lower }} examples, you can view his progress [here][dotnet-lib]
 
 __NOTE:__ This project can be adapted to target any [.net][dotnet] language.
 
@@ -105,7 +105,7 @@ this project will only work on the Intel Edison.
 
 [Resin Golang Image Example][golang-image-link]
 
-This project contains examples of how to use Resin Golang images on devices supported by Resin.io.
+This project contains examples of how to use Resin Golang images on devices supported by {{ $names.company.upper }}.
 
 <!-- ###Language Demo Projects Links  -->
 

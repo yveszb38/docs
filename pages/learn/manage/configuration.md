@@ -12,7 +12,7 @@ __Note:__ Configuration variables defined in the dashboard will not apply to dev
 
 ## Variable list
 
-This list contains configuration variables that can be used with resin.io devices, some of which will automatically appear for devices with supervisor v7.0.0 and greater. While they may not automatically populate in the dashboard, most of these variables can still be used with older supervisor versions, so be sure to check the *Valid from* column:
+This list contains configuration variables that can be used with {{ $names.company.lower }} devices, some of which will automatically appear for devices with supervisor v7.0.0 and greater. While they may not automatically populate in the dashboard, most of these variables can still be used with older supervisor versions, so be sure to check the *Valid from* column:
 
 Name | Default | Description | Valid from
 --- | --- | --- | ---
@@ -23,8 +23,8 @@ RESIN_SUPERVISOR_DELTA_REQUEST_TIMEOUT | 30000| Define the timeout when requesti
 RESIN_SUPERVISOR_DELTA_RETRY_COUNT | 30 | Define the number of times a delta download should be retried | v6.2.0
 RESIN_SUPERVISOR_DELTA_RETRY_INTERVAL | 1000 | Define the wait time between delta download attempts, in milliseconds | v6.2.0
 RESIN_SUPERVISOR_LOCAL_MODE | false | Enable / Disable [local mode][local-mode] | v4.0.0
-RESIN_SUPERVISOR_LOG_CONTROL | true | Enable / Disable logs being sent to resin.io | v1.3.0
-RESIN_SUPERVISOR_POLL_INTERVAL | 60000 | Define the resin.io API poll interval in milliseconds | v1.3.0
+RESIN_SUPERVISOR_LOG_CONTROL | true | Enable / Disable logs being sent to {{ $names.company.lower }} | v1.3.0
+RESIN_SUPERVISOR_POLL_INTERVAL | 60000 | Define the {{ $names.company.lower }} API poll interval in milliseconds | v1.3.0
 RESIN_SUPERVISOR_VPN_CONTROL | true | Enable / Disable VPN | v1.3.0
 
 

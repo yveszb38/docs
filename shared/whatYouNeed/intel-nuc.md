@@ -6,7 +6,7 @@
 * A simple USB keyboard.
 * A power supply unit for the NUC.
 * An ethernet cable or [WiFi adapter][wifi] to connect your device to the internet.
-* A [resin.io account][link-to-signup].
+* A [{{ $names.company.lower }} account][link-to-signup].
 
 [nuc-link]:http://www.intel.co.uk/content/www/uk/en/nuc/products-overview.html
 [hdmi-link]:https://en.wikipedia.org/wiki/HDMI

@@ -1,6 +1,6 @@
 ---
 title: Interact with hardware
-excerpt: Access GPIO, I2C and SPI interfaces with resin.io
+excerpt: Access GPIO, I2C and SPI interfaces with {{ $names.company.lower }}
 ---
 
 # Interact with hardware

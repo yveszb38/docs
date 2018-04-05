@@ -5,7 +5,7 @@
 > A remote [git repository][git-repo] that is associated to your application. Any code pushed to the `master` branch of this repo will be built and deployed as a container on all devices in the application. This git repo uses SSH keys to secure it, so don't forget to set up your SSH key.
 
 * **Container:**
->A [Docker container][docker-containers] that essentially is a bundle of your application code and all its dependencies. It runs as an isolated process in userspace on the resinOS host.
+>A [Docker container][docker-containers] that essentially is a bundle of your application code and all its dependencies. It runs as an isolated process in userspace on the {{ $names.os.lower }} host.
 
 
 [docker-containers]:https://docs.docker.com/engine/understanding-docker/#how-does-a-container-work

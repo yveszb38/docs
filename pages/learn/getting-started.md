@@ -25,7 +25,7 @@ dynamic:
 
 ## Account setup
 
-If you don't already have a resin.io account, make sure to [sign up][link-to-signup].
+If you don't already have a {{ $names.company.lower }} account, make sure to [sign up][link-to-signup].
 
 {{import "sshKey/add"}}
 
@@ -33,7 +33,7 @@ If you don't already have a resin.io account, make sure to [sign up][link-to-sig
 
 {{import "createAnApp"}}
 
-{{import "getResinOS"}}
+{{import "getOS"}}
 
 {{import "selectNetworkConfig"}}
 
@@ -51,11 +51,11 @@ If you don't already have a resin.io account, make sure to [sign up][link-to-sig
 - Learn more about the [Dockerfile][dockerfile] that is used to build your application.
 - Build an application that uses [multiple containers][multicontainer].
 - Get to know the [web terminal][terminal], which can be used to SSH into your application containers and the host OS.
-- Try out [local mode][local-mode], the most efficient way to rapidly develop and test your resin.io application.
+- Try out [local mode][local-mode], the most efficient way to rapidly develop and test your {{ $names.company.lower }} application.
 
 ## Example projects
 
-These example projects will give you an idea of more things that can be done with resin.io:
+These example projects will give you an idea of more things that can be done with {{ $names.company.lower }}:
 
 {{import "exampleProjects"}}
 

@@ -8,7 +8,7 @@ This is a small collection of base projects to get you started. The focus on spe
 
 ## Installing a Project
 
-To install a project you will need a [resin.io][resin] account with an
+To install a project you will need a [{{ $names.company.lower }}][resin] account with an
 application set up ready to receive code. See the
 [getting started][getting-started] and [deployment][deploy] guides for details
 on how to do this.
@@ -56,7 +56,7 @@ This python project allows you to share your ethernet connection to wifi. It ess
 
 [Repository][avahi-example]
 
-This simple example demonstrates how to get the avahi daemon running on your resin.io device. From this example you will be able to access your device from `<RESIN_UUID>.local` on your local network. The `<RESIN_UUID>` is the ID shown on the resin.io device dashboard.
+This simple example demonstrates how to get the avahi daemon running on your {{ $names.company.lower }} device. From this example you will be able to access your device from `<RESIN_UUID>.local` on your local network. The `<RESIN_UUID>` is the ID shown on the {{ $names.company.lower }} device dashboard.
 
 ### Example GPIO control in node.js
 
