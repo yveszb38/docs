@@ -46,8 +46,8 @@ To convert your application, first be sure all devices meet the {{ $names.os.low
 
 Select the application type you would like to convert to. If your application cannot be converted to the selected type, you will see an error message at the top of the *Actions* page.
 
-[pricing]:https://resin.io/pricing/
+[pricing]:https://{{ $names.domain }}/pricing/
 [multicontainer]:/learn/develop/multicontainer
 [public-url]:/learn/manage/actions/#enable-public-device-url
-[update]:/reference/resinOS/updates/self-service
+[update]:/reference/OS/updates/self-service
 [classic]:#classic-and-legacy-applications

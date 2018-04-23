@@ -43,4 +43,4 @@ echo ". <(xargs -0 bash -c 'printf \"export %q\n\" \"\$@\"' -- < /proc/1/environ
 [dockerfile-init]:/learn/develop/dockerfile/#init-system
 [compose-init]:/learn/develop/multicontainer/#resin-io-settings
 [resin-ssh]:/reference/cli/#ssh-uuid-
-[resin-openssh]:https://github.com/resin-io-projects/resin-openssh
+[resin-openssh]:{{ $links.githubProjects }}/resin-openssh

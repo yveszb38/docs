@@ -15,9 +15,9 @@ To deploy a project simply clone it and push it to your application's `resin`
 endpoint. E.g. for the [Text to Speech Converter project][text2speech]:
 
 ```
-git clone https://github.com/resin-io/text2speech.git
-git remote add resin [endpoint]
-git push resin master
+git clone {{ $links.githubMain }}/text2speech.git
+git remote add {{ $names.company.short }} [endpoint]
+git push {{ $names.company.short }} master
 ```
 
 ## Projects
@@ -158,7 +158,7 @@ A safe-deposit box that requires 2FA to open (inputting a passcode and an SMS co
 
 A Slack bot that picks a lunch place for a team.
 Written in Node.js using ES6 and Botkit to quickly assemble the bot and its responses.
-Read the writeup on [our blog](https://resin.io/blog/planning-lunch-with-a-slackbot-on-resin-io/)
+Read the writeup on [our blog](https://{{ $names.domain }}/blog/planning-lunch-with-a-slackbot-on-resin-io/)
 
 ## Community Built Projects
 
@@ -197,12 +197,12 @@ visualisation at [123k.de](http://123k.de).
 
 <!-- ###Team Project Links -->
 
-[text2speech]:https://github.com/resin-io/text2speech
-[coder-fork]:https://github.com/resin-io/coder
+[text2speech]:{{ $links.githubMain }}/text2speech
+[coder-fork]:{{ $links.githubMain }}/coder
 [resin-player]:https://bitbucket.org/lifeeth/resin_player/
 [digitiser-kiosk]:https://bitbucket.org/lifeeth/resin-kiosk
 [sms2speech]:https://github.com/alexandrosm/sms2speech
-[hoversnap]:https://github.com/resin-io/hoversnap
+[hoversnap]:{{ $links.githubMain }}/hoversnap
 [digitiser]:https://github.com/shaunmulligan/digitiser
 [firebase-dtl]:https://github.com/shaunmulligan/firebaseDTL
 [resin-cctv]:https://github.com/abresas/resin-cctv
@@ -211,11 +211,11 @@ visualisation at [123k.de](http://123k.de).
 [dockerHub]:https://github.com/nghiant2710/resin-DockerHubDeploymentGuide
 [resin-samba]:https://github.com/abresas/resin-samba
 [webLamp]:https://github.com/shaunmulligan/webLamp
-[sonos-clone]:https://github.com/resin-io/music-player-device
-[clonos-frontend]:https://github.com/resin-io/music-player-web
+[sonos-clone]:{{ $links.githubMain }}/music-player-device
+[clonos-frontend]:{{ $links.githubMain }}/music-player-web
 [grovepi-humidity]:https://github.com/shaunmulligan/grovePi
-[safebox]:https://github.com/resin-io/resin-safebox
-[sms2speech_python]:https://github.com/resin-io/sms2speech_python
+[safebox]:{{ $links.githubMain }}/resin-safebox
+[sms2speech_python]:{{ $links.githubMain }}/sms2speech_python
 
 <!-- ###Community Project Links -->
 
@@ -258,7 +258,7 @@ visualisation at [123k.de](http://123k.de).
 
 <!-- ###Additional links -->
 
-[resin]:https://resin.io
+[resin]:https://{{ $names.domain }}/
 [dropbox]:https://www.dropbox.com/
 [deploy]:/deployment/deployment
 [dockerfile]:/deployment/dockerfile
@@ -278,8 +278,8 @@ visualisation at [123k.de](http://123k.de).
 [twillio]:https://www.twilio.com/
 [zettajs-website]:http://www.zettajs.org/
 [authy]:http://authy.com
-[safebox-blog]:https://resin.io/blog/two-factor-authentication-in-the-real-world/
-[sms2speech-blog]:https://resin.io/blog/sms-to-speech/
-[audio-stock-ticker-link]:https://github.com/resin-io-projects/audio-stock-ticker
-[pm2-blog-link]:https://resin.io/blog/eternal-applications-with-pm2-and-resin-io/
-[pm2-repo-link]:https://github.com/resin-io-projects/resin-pm2-monitor.git
+[safebox-blog]:https://{{ $names.domain }}/blog/two-factor-authentication-in-the-real-world/
+[sms2speech-blog]:https://{{ $names.domain }}/blog/sms-to-speech/
+[audio-stock-ticker-link]:{{ $links.githubProjects }}/audio-stock-ticker
+[pm2-blog-link]:https://{{ $names.domain }}/blog/eternal-applications-with-pm2-and-resin-io/
+[pm2-repo-link]:{{ $links.githubProjects }}/resin-pm2-monitor.git

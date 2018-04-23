@@ -11,8 +11,7 @@ different programming languages, which are designed to form the basis of your
 own projects written in each language.
 
 The projects use [Dockerfiles][dockerfile] to install packages and configure the
-local environment as needed for each language. This step is performed on the
-resin.io build server and the finished product is pushed to your devices.
+local environment as needed for each language. This step is performed on the build server and the finished product is pushed to your devices.
 
 A link is provided for each project's individual Dockerfile below for easy
 customisation.
@@ -28,9 +27,9 @@ To deploy a project simply clone it and push it to your application's `resin`
 endpoint. E.g. for the [Text to Speech Converter project][text2speech]:-
 
 ```
-git clone https://github.com/resin-io/text2speech.git
-git remote add resin [endpoint]
-git push resin master
+git clone {{ $links.githubMain }}/text2speech.git
+git remote add {{ $names.company.short }} [endpoint]
+git push {{ $names.company.short }} master
 ```
 
 ### Node.js
@@ -90,7 +89,7 @@ Hello World written in [Scala][scala] using a
 Hello World written in [Ruby][ruby] using a [custom Dockerfile][ruby-dockerfile].
 
 [dockerfile]:/deployment/dockerfile
-[text2speech]:https://github.com/resin-io/text2speech
+[text2speech]:{{ $links.githubMain }}/text2speech
 
 ### Golang
 
@@ -121,27 +120,27 @@ This project contains examples of how to use Resin Golang images on devices supp
 [expressjs-link]:http://expressjs.com/
 [flask-python-link]:http://flask.pocoo.org/
 
-[simple-nodejs]:https://github.com/resin-io/basic-resin-node-project
-[simple-nodejs-server-link]:https://github.com/resin-io-projects/simple-server-node.git
+[simple-nodejs]:{{ $links.githubMain }}/basic-resin-node-project
+[simple-nodejs-server-link]:{{ $links.githubProjects }}/simple-server-node.git
 [hello-dotnet]:https://github.com/ResinIoDotNetExamples/Example-01-HelloWorld
 [hello-java]:https://github.com/nghiant2710/Hello-Java
 [hello-scala]:https://github.com/elecnix/Hello-Scala
 [hello-python]:https://github.com/alexandrosm/hello-python
-[simple-python-server-link]:https://github.com/resin-io-projects/simple-server-python.git
+[simple-python-server-link]:{{ $links.githubProjects }}/simple-server-python.git
 [hello-ruby]:https://github.com/nghiant2710/Hello-Ruby
 [golang-seed-link]:https://github.com/shaunmulligan/resin-golang-seed.git
 [golang-image-link]:https://github.com/nghiant2710/resin-golang-example.git
 [gb-builder-link]:https://getgb.io/
 
 [csharp-dockerfile]:https://github.com/ResinIoDotNetExamples/Example-01-HelloWorld/blob/master/Dockerfile
-[java-dockerfile]:https://github.com/resin-io/Hello-Java/blob/master/Dockerfile
+[java-dockerfile]:{{ $links.githubMain }}/Hello-Java/blob/master/Dockerfile
 [scala-dockerfile]:https://github.com/elecnix/Hello-Scala/blob/master/Dockerfile
 [python-dockerfile]:https://github.com/alexandrosm/hello-python/blob/master/Dockerfile
-[ruby-dockerfile]:https://github.com/resin-io/Hello-Ruby/blob/master/Dockerfile
+[ruby-dockerfile]:{{ $links.githubMain }}/Hello-Ruby/blob/master/Dockerfile
 
 [martincalsyn]:https://github.com/martincalsyn
 
 [deploy]:/deployment/deployment
 [getting-started]:/installing/gettingStarted
-[resin]:https://resin.io
+[resin]:https://{{ $names.domain }}/
 [resin-dockerfile-guide]:/deployment/dockerfile

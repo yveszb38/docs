@@ -72,13 +72,13 @@ These are just a few tips from our engineers on how to reduce your build size
 * You can combine the smaller layers together (each RUN/COPY/etc command creates a new layer) in order to reduce the metadata required for each layer and to speed up the updating process (each layer is downloaded individually), eg. you could change:
 ```Dockerfile
 RUN mkdir /var/run/sshd
-RUN echo 'root:resin' | chpasswd
+RUN echo 'root:{{ $names.os.short }}' | chpasswd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 ```
 into
 ```Dockerfile
 RUN mkdir /var/run/sshd \
-  && echo 'root:resin' | chpasswd
+  && echo 'root:{{ $names.os.short }}' | chpasswd
   && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 ```
 in order to merge those three layers into just one, without losing any benefits of Docker caching - this would also work well for combing the layers that add the apt mirrors.

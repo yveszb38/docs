@@ -76,7 +76,7 @@ So there you have it. Brand new base images for your {{ $names.company.lower }} 
 [docker]:https://www.docker.com/
 [dockerfile]:https://docs.docker.com/reference/builder/
 [docker-registry]:https://registry.hub.docker.com/u/resin/rpi-raspbian/tags/manage/
-[resin-docker-blog]:https://resin.io/blog/docker-on-raspberry-pi/
+[resin-docker-blog]:https://{{ $names.domain }}/blog/docker-on-raspberry-pi/
 [dockerhub-link]:https://registry.hub.docker.com/search?q=rpi
 [rpi-archlinux-link]:https://registry.hub.docker.com/u/digitallyseamless/archlinux-armv6h/
 [docker-custom-base-os-repo]:https://github.com/nghiant2710/base-os-image-example

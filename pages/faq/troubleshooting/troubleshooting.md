@@ -6,7 +6,7 @@ title: Troubleshooting
 
 * [General](#general)
   * [Terminal Closes On Update](#terminal-closes-on-update)
-  * [Can't Login to dashboard.resin.io](#can-t-login-to-dashboard-resin-io)
+  * [Can't Login to the Dashboard](#can-t-login-to-the-dashboard)
   * [I get `$'\r': command not found` when my device tries to run scripts](#i-get-r-command-not-found-when-my-device-tries-to-run-scripts)
   * [Device keeps dropping off wifi](#device-keeps-dropping-off-wifi)
 * [Raspberry Pi](#raspberry-pi)
@@ -24,9 +24,9 @@ title: Troubleshooting
 
 When you push updates, the terminal session is automatically closed. To restart the terminal session, simply close the terminal session and restart it once the update is complete.
 
-### Can't Login to dashboard.resin.io
+### Can't Login to the Dashboard
 
-In some cases social logins can be disrupted or completely borked by Adblocker or browser extensions such as [BrowserShark](https://chrome.google.com/webstore/detail/browsershark/jhbjnipjccjloncefdoknhicbnbjaefh?hl=en). Make sure to disable these extensions or whitelist the `*.resin.io` domains.
+In some cases social logins can be disrupted or completely borked by Adblocker or browser extensions such as [BrowserShark](https://chrome.google.com/webstore/detail/browsershark/jhbjnipjccjloncefdoknhicbnbjaefh?hl=en). Make sure to disable these extensions or whitelist the `*.{{ $names.domain }}` domains.
 
 ### I get `$'\r': command not found` when my device tries to run scripts
 Line endings differ between windows and the unix-y world (they used to be different again for mac but not for many years), which can result in issues. E.g. a user seeing something like:
@@ -73,7 +73,7 @@ This is either because it is not connected to the network or because the network
 
 * The first things to check in this case is that your device is correctly connected to ethernet or that you correctly entered the wifi credentials. To check wifi credentials, power your device down, remove the SD card, and mount the SD card on your personal computer. If your device is running {{ $names.os.lower }} version 2.0 or greater, wifi credentials are listed in `system-connections/resin-wifi`, found in the `resin-boot` partition of the SD card. Otherwise, check the `config.json` file (in the `resin-boot` partition for versions 1.2 and greater, or `resin-conf` for earlier versions).
 * Secondly check that your network is not restricting or blocking the ports specified in the [{{ $names.company.lower }} network requirements](/deployment/network/#network-requirements).
-* If you still aren't able to get your device online, reach out to us in the [forums](https://forums.resin.io/) or [chat](https://gitter.im/resin-io/chat).
+* If you still aren't able to get your device online, reach out to us in the [forums](https://forums.{{ $names.domain }}/) or [chat](https://gitter.im/resin-io/chat).
 
 #### Can't Boot the Kernel.img
 If the `ACT` LED blinks with the repeated pattern of 7 quick flashes and a pause (`*_*_*_*_*_*_*____*_*_*_*_*_*_*____`), this means that the raspberry pi boot loader is not able to load the correct kernel.img.

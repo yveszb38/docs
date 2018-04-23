@@ -29,7 +29,7 @@ First, the device connects to the network and performs its early provisioning, w
 
 ## Code deployment
 
-Code deployment begins when you type `git push resin master` in your command line, moving your application code from a local repository to the {{ $names.company.lower }} platform. Here's what the process looks like:
+Code deployment begins when you type `git push {{ $names.company.short }} master` in your command line, moving your application code from a local repository to the {{ $names.company.lower }} platform. Here's what the process looks like:
 
 <img src="/img/common/how_deploy_works.jpg" width="80%">
 
@@ -61,9 +61,9 @@ Once your services are up and running, you can use the dashboard to monitor and 
 
 Much of the device, service, and application information provided by the dashboard is managed through the [{{ $names.company.lower }} API][api], and can also be viewed and modified using the [CLI][cli] or the [Node.js][node] and [Python][python] SDKs. {{ $names.company.upper }} has been designed so users can build rich experiences, combining device-level data provided by {{ $names.company.lower }} with higher-level application-specific data that lives in other data domains.
 
-[resinos-docs]:/reference/resinOS/overview
+[resinos-docs]:/reference/OS/overview
 [build]:/learn/deploy/deployment
-[dashboard]:https://dashboard.resin.io
+[dashboard]:https://dashboard.{{ $names.domain }}/
 [getting-started]:/learn/getting-started
 [resinos]:https://resinos.io/
 [yocto]:https://www.yoctoproject.org/
@@ -71,8 +71,8 @@ Much of the device, service, and application information provided by the dashboa
 [docker]:https://www.docker.com/
 [docker-images]:https://hub.docker.com/u/resin/
 [multicontainer]:/learn/develop/multicontainer
-[update-process]:/reference/resinOS/updates/update-process
-[self-service]:/reference/resinOS/updates/self-service
+[update-process]:/reference/OS/updates/update-process
+[self-service]:/reference/OS/updates/self-service
 [dockerfile]:/learn/develop/dockerfile
 [update-strategies]:/learn/deploy/release-strategy/update-strategies
 [delta-updates]:/learn/deploy/delta

@@ -71,7 +71,7 @@ To allow our builders to build containers for multiple architectures from one co
 
 It is now possible to define a `Dockerfile.template` file that looks like this:
 ```Dockerfile
-FROM resin/%%RESIN_MACHINE_NAME%%-node
+FROM resin/%%{{ $names.company.allCaps }}_MACHINE_NAME%%-node
 
 COPY package.json /package.json
 RUN npm install
@@ -80,7 +80,7 @@ COPY src/ /usr/src/app
 CMD ["node", "/usr/src/app/main.js"]
 ```
 This template will build and deploy a Node.js project for any of the devices supported by {{ $names.company.lower }}, regardless of whether the device architecture is [ARM][ARM-link] or [x86][x86-link].
-In this example, you can see the build variable `%%RESIN_MACHINE_NAME%%`. This will be replaced by the machine name (i.e.: `raspberry-pi`) at build time. See below for a list of machine names.
+In this example, you can see the build variable `%%{{ $names.company.allCaps }}_MACHINE_NAME%%`. This will be replaced by the machine name (i.e.: `raspberry-pi`) at build time. See below for a list of machine names.
 
  The machine name is inferred from the device type of the application you are pushing to. So if you have an Intel Edison application, the machine name will be `intel-edison` and an `i386` architecture base image will be built.
 
@@ -90,14 +90,14 @@ Currently our builder supports the following build variables.
 
 | Variable Name        | Description          |
 | ------------- |-------------|
-| RESIN_MACHINE_NAME    | The name of the yocto machine this board is base on. It is the name that you will see in most of the {{ $names.company.lower }} [Docker base images][base-images].  This name helps us identify a specific [BSP](https://en.wikipedia.org/wiki/Board_support_package). | 
-| RESIN_ARCH    | The instruction set architecture for the base images associated with this device.|
+| {{ $names.company.allCaps }}_MACHINE_NAME    | The name of the yocto machine this board is base on. It is the name that you will see in most of the {{ $names.company.lower }} [Docker base images][base-images].  This name helps us identify a specific [BSP](https://en.wikipedia.org/wiki/Board_support_package). | 
+| {{ $names.company.allCaps }}_ARCH    | The instruction set architecture for the base images associated with this device.|
   
 If you want to see an example in action, you can have a look at this [basic openssh example](https://github.com/shaunmulligan/resin-openssh).
 
 Here are the supported machine names and architectures:
 
-{{> "general/resinDeviceTypeNames"}}
+{{> "general/deviceTypeNames"}}
 
 ## Init system
 
@@ -172,7 +172,7 @@ here's its `package.json` file*:
   "description": "Simple resin app that uses Google's TTS endpoint",
   "repository": {
     "type": "git",
-    "url": "https://github.com/resin-io/text2speech.git"
+    "url": "{{ $links.githubMain }}/text2speech.git"
   },
   "scripts": {
     "preinstall": "bash deps.sh"
@@ -231,7 +231,7 @@ __Note:__ With plain Node.js project, our build server will automatically detect
 [starter-projects]:/examples/projects#Programming_Language_Starter_Projects
 [dockerfile-best-practices]:https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#add-or-copy
 [docker-registry]:https://registry.hub.docker.com/u/resin/rpi-raspbian/tags/manage/
-[resin-docker-blog]:https://resin.io/blog/docker-on-raspberry-pi/
+[resin-docker-blog]:https://{{ $names.domain }}/blog/docker-on-raspberry-pi/
 [dockerhub-link]:https://registry.hub.docker.com/search?q=rpi
 [rpi-archlinux-link]:https://registry.hub.docker.com/u/digitallyseamless/archlinux-armv6h/
 [docker-custom-base-os-repo]:https://github.com/nghiant2710/base-os-image-example
@@ -245,7 +245,7 @@ __Note:__ With plain Node.js project, our build server will automatically detect
 [builders]:/learn/deploy/deployment
 [local-build]:/reference/cli/#build-source-
 [multicontainer]:/learn/develop/multicontainer
-[base-images]:/reference/base-images/resin-base-images
+[base-images]:/reference/base-images/base-images
 
 [init-system-link]:https://en.wikipedia.org/wiki/Init
 [systemd-link]:https://en.wikipedia.org/wiki/Systemd
@@ -255,7 +255,7 @@ __Note:__ With plain Node.js project, our build server will automatically detect
 [package]:https://www.npmjs.org/doc/package.json.html
 [container]:https://wiki.archlinux.org/index.php/Linux_Containers
 [npm]:https://www.npmjs.org/
-[text-to-speech]:https://github.com/resin-io/text2speech
+[text-to-speech]:{{ $links.githubMain }}/text2speech
 [node]:http://nodejs.org/
 [raspbian]:http://www.raspbian.org/
 [aptitude]:https://wiki.debian.org/Aptitude

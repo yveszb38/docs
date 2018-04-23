@@ -16,10 +16,10 @@ Follow our [getting started guide][installing] to get your device connect to you
 
 ## Create the {{ $names.company.lower }} API Key
 
-Find your Application ID in the {{ $names.company.lower }} dashboard url: https://dashboard.resin.io/apps/NNNN/devices and your auth-token from the [preferences panel](https://dashboard.resin.io/preferences?tab=details). Then combine insert the two into the curl request below.
+Find your Application ID in the {{ $names.company.lower }} dashboard url: https://dashboard.{{ $names.domain }}/apps/NNNN/devices and your auth-token from the [preferences panel](https://dashboard.{{ $names.domain }}/preferences?tab=details). Then combine insert the two into the curl request below.
 
 ```
-curl -H 'Authorization: Bearer AUTH_TOKEN' -X POST https://api.resin.io/application/NNNN/generate-api-key
+curl -H 'Authorization: Bearer AUTH_TOKEN' -X POST https://api.{{ $names.domain }}/application/NNNN/generate-api-key
 ```
 
 This will return your new API key.
@@ -67,19 +67,19 @@ First clone the the [sample application][sampleApp] to your local machine.
 __NOTE:__ Our integration is not part of the code Microsoft releases, instead it will stay as a separate fork that should be used instead of the official sample solution.
 
 ```
-git clone https://github.com/resin-io-projects/resin-azure-iot-sample && cd resin-azure-iot-sample && git checkout resin-node
+git clone {{ $links.githubProjects }}/resin-azure-iot-sample && cd resin-azure-iot-sample && git checkout resin-node
 ```
 
 Then add your {{ $names.company.lower }} applications remote endpoint to the git repository. It can be found in the top right hand corner of your resin applications dashboard.
 
 ```
-git remote add resin <your-applications-remote-endpoint>
+git remote add {{ $names.company.short }} <your-applications-remote-endpoint>
 ```
 
 Then all that's left to do is push your repository to your {{ $names.company.lower }} application endpoint we have just created.
 
 ```
-git push resin resin-node:master
+git push {{ $names.company.short }} resin-node:master
 ```
 
 Once the container is successfully built (you'll see a unicorn), the container will begin to download to the device.
@@ -97,9 +97,9 @@ Now you’re done. Provision as many devices as you need with resin (you can use
 
 ![devices-running](/img/integrations/azure/devices-running.png)
 
-[resin]:http://resin.io
+[resin]:http://{{ $names.domain }}
 [installing]:/installing/gettingStarted
 [azure]:http://www.microsoft.com/en-us/server-cloud/internet-of-things.aspx
 [screencast]:https://vimeo.com/136840643
-[integration]:https://github.com/resin-io-projects/resin-azure-iot-remote-monitoring
-[sampleApp]:https://github.com/resin-io-projects/resin-azure-iot-sample
+[integration]:{{ $links.githubProjects }}/resin-azure-iot-remote-monitoring
+[sampleApp]:{{ $links.githubProjects }}/resin-azure-iot-sample

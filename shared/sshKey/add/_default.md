@@ -17,4 +17,4 @@ If you are unfamiliar with SSH keys, we recommend you take a look at **GitHub's*
 
 [github_ssh]:https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 [github_windows]:https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-windows
-[prefsPage]:https://dashboard.resin.io/preferences?tab=sshkeys
+[prefsPage]:https://dashboard.{{ $names.domain }}/preferences?tab=sshkeys

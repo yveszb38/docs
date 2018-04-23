@@ -6,4 +6,4 @@
 
 [supportedDevicesList]:/hardware/devices/
 
-[link-to-signup]:https://dashboard.resin.io/signup
+[link-to-signup]:https://dashboard.{{ $names.domain }}/signup

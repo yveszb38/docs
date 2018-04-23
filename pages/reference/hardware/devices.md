@@ -92,5 +92,5 @@ __Warning:__ HDMI is currently not supported on the Odroid XU4.
 ### Other Devices
 
 To request support for additional devices, you can create a GitHub issue in the
-[resin-os-device-support](https://github.com/resin-os/resin-os-device-support)
+[resin-os-device-support]({{ $links.githubOS }}/resin-os-device-support)
 repository!

@@ -16,7 +16,7 @@ journalctl -u systemd-timesyncd
 ```
 To return the last *x* messages, use `-fn x`:
 ```
-journalctl -fn 100 -u resin-supervisor
+journalctl -fn 100 -u {{ $names.company.short }}-supervisor
 ```
 
 #### dmesg
@@ -73,11 +73,11 @@ In some cases, you may need to examine the contents of certain directories or fi
 Note that the [filesystem layout][filesystem] may look slightly different from what you’d expect—for example the two locations mentioned above are found at `/mnt/data` and `/mnt/boot`, respectively.
 
 
-[forums]:https://forums.resin.io/c/troubleshooting
+[forums]:https://forums.{{ $names.domain }}/c/troubleshooting
 [{{ $names.engine.lower }}]:https://www.balena.io/
 [nmcli]:https://fedoraproject.org/wiki/Networking/CLI
 [mmcli]:https://www.freedesktop.org/software/ModemManager/man/1.0.0/mmcli.8.html
 [persistent-storage]:/learn/develop/runtime/#persistent-storage
-[config-txt]:/reference/resinOS/advanced/#config-txt
-[network]:/reference/resinOS/network/2.x
-[filesystem]:/reference/resinOS/overview/2.x/#stateless-and-read-only-rootfs
+[config-txt]:/reference/OS/advanced/#config-txt
+[network]:/reference/OS/network/2.x
+[filesystem]:/reference/OS/overview/2.x/#stateless-and-read-only-rootfs

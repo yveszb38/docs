@@ -29,7 +29,7 @@ For device types and {{ $names.os.lower }} versions that are not yet supported, 
 
 To run an update, navigate to your device's *Actions* tab, click *Update {{ $names.os.upper }}*, and select the version of {{ $names.os.lower }} you would like to update to:
 
-<img src="/img/common/updates/update-resinos.png" width="80%">
+<img src="/img/common/updates/update-os.png" width="80%">
 
 __Note:__ Updates to the supervisor, {{ $names.company.lower }}'s agent on the device, are handled in conjuction with host OS updates. If you need to update the supervisor separately from the host OS, please [contact us][troubleshooting] for assistance.
 
@@ -37,11 +37,11 @@ You will see a progress bar that marks the steps completed for the update. Some 
 
 Update time can vary significantly, depending on the speed of your network, the speed of your SD card (or other storage medium), and your device performance.
 
-If your {{ $names.os.lower }} update fails for any reason, the device should still be recoverable. For devices running {{ $names.os.lower }} 2.x, the user application should still be running normally, and the reasons for failure can be examined throught the update logs at `mnt/data/resinhup/`. If you have any issues, please contact us on the [troubleshooting section of the forums][troubleshooting].
+If your {{ $names.os.lower }} update fails for any reason, the device should still be recoverable. For devices running {{ $names.os.lower }} 2.x, the user application should still be running normally, and the reasons for failure can be examined throught the update logs at `mnt/data/{{ $names.company.short }}hup/`. If you have any issues, please contact us on the [troubleshooting section of the forums][troubleshooting].
 
 You can learn more about what exactly goes on during the update process [here][update-process].
 
 <!-- links -->
-[forums]:https://forums.resin.io/
-[troubleshooting]:https://forums.resin.io/c/troubleshooting
+[forums]:https://forums.{{ $names.domain }}/
+[troubleshooting]:https://forums.{{ $names.domain }}/c/troubleshooting
 [update-process]:/updates/update-process/

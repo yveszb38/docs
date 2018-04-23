@@ -25,7 +25,7 @@ The first points of access to the {{ $names.company.lower }} ecosystem are the u
 
 ## Device access
 
-Device access is managed by our host operating system, [{{ $names.os.lower }}](https://docs.resin.io/understanding/understanding-devices/). {{ $names.os.upper }} is a thin Linux environment that supports the {{ $names.company.lower }} services and user application containers.  {{ $names.os.upper }} is built using [Yocto Linux](https://www.yoctoproject.org/), the de facto standard for building lightweight embedded Linux environments. Using Yocto allows {{ $names.company.lower }} to build images that contain no unused or unnecessary code in either userspace or the running kernel, minimizing the device's available attack surface. All {{ $names.company.lower }} software running on devices is 100% open source and can be independently audited and verified.
+Device access is managed by our host operating system, [{{ $names.os.lower }}](https://docs.{{ $names.domain }}/understanding/understanding-devices/). {{ $names.os.upper }} is a thin Linux environment that supports the {{ $names.company.lower }} services and user application containers.  {{ $names.os.upper }} is built using [Yocto Linux](https://www.yoctoproject.org/), the de facto standard for building lightweight embedded Linux environments. Using Yocto allows {{ $names.company.lower }} to build images that contain no unused or unnecessary code in either userspace or the running kernel, minimizing the device's available attack surface. All {{ $names.company.lower }} software running on devices is 100% open source and can be independently audited and verified.
 
 When a {{ $names.os.lower }} image is downloaded and flashed to a device, it comes with a provisioning key that allows devices to be added to a specific application. When the device boots up for the first time, it uses the provisioning API to register itself with {{ $names.company.lower }}. A new device entry on the {{ $names.company.lower }} backend is created, and a device API key for this device is generated. Once the provisioning is successful, the provisioning API key is deleted from the device. The device API key allows control of the following:
 
@@ -52,7 +52,7 @@ The {{ $names.company.lower }} VPN disallows device-to-device traffic and prohib
 
 Currently, authentication against the VPN is performed with API token authentication.  API keys can be managed and revoked in the {{ $names.company.lower }} dashboard. 
 
-This VPN connection is optional and [can be disabled](https://docs.resin.io/runtime/bandwidth-reduction/) to conserve bandwidth or to remove the option of outside device control through the {{ $names.company.lower }} dashboard or API.  When disabled, the VPN connection is not established from the device and no traffic will be transmitted or received through this channel.  If desired, the VPN can be enabled and disabled programmatically so that it is turned on only when in active use (e.g. for interactive debugging) and disabled normally.  
+This VPN connection is optional and [can be disabled](https://docs.{{ $names.domain }}/runtime/bandwidth-reduction/) to conserve bandwidth or to remove the option of outside device control through the {{ $names.company.lower }} dashboard or API.  When disabled, the VPN connection is not established from the device and no traffic will be transmitted or received through this channel.  If desired, the VPN can be enabled and disabled programmatically so that it is turned on only when in active use (e.g. for interactive debugging) and disabled normally.  
 
 ### Support access
 
@@ -107,4 +107,4 @@ The {{ $names.company.lower }} backend services, with the exception of the ARM i
 
 ## Conclusion
 
-The safety and security of your data and devices is crucial to us at {{ $names.company.lower }}.  We do everything in our power to keep our services secure and transparent. If you have any questions about our security, please contact us at [security@resin.io](mailto:security@resin.io) and we will answer in detail.
+The safety and security of your data and devices is crucial to us at {{ $names.company.lower }}.  We do everything in our power to keep our services secure and transparent. If you have any questions about our security, please contact us at [security@{{ $names.domain }}](mailto:security@{{ $names.domain }}) and we will answer in detail.

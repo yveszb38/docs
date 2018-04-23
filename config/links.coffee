@@ -3,14 +3,24 @@
 
 RPI_PRODUCTS = "https://www.raspberrypi.org/products"
 BB_PRODUCTS = "https://beagleboard.org"
-DASHBOARD_URL = "https://dashboard.resin.io"
+GITHUB_MAIN = "https://github.com/resin-io"
+GITHUB_PROJECTS = "https://github.com/resin-io-projects"
+GITHUB_OS = "https://github.com/resin-os"
+API_BASE = "https://api.resin.io/v1/"
 
 module.exports =
   raspberrypi:
     aplus: "#{RPI_PRODUCTS}/model-a-plus/"
     bplus: "#{RPI_PRODUCTS}/model-b-plus/"
-  dashboard: DASHBOARD_URL
   beaglebone:
     black: "#{BB_PRODUCTS}/black"
     green: "#{BB_PRODUCTS}/green"
-  apiBase: "https://api.resin.io/v1/"
+  dashboard: DASHBOARD_URL
+  dashboardStaging: DASHBOARD_STAGING
+  mainSite = MAIN_SITE
+  forums = FORUMS
+  githubMain: GITHUB_MAIN
+  githubProjects: GITHUB_PROJECTS
+  githubOS: GITHUB_OS
+  apiBase: API_BASE
+

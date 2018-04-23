@@ -61,7 +61,7 @@ When developing an application, you should consider using a [development image][
 
 While prototyping, you should start thinking about how your devices will be connected when deployed in the real world.  If it's possible to have network settings preconfigured, or to have everything done by DHCP, this is easy. But most devices will need onsite configuration.
 
-{{ $names.company.upper }} provides the ability to configure networking from inside your application containers and exposes a great deal of functionality to make this easier. One example is the [resin-wifi-connect][wifi-connect] project, which allows the device to create its own WiFi access point that users can connect with to configure proper credentials. The {{ $names.company.lower }} [supervisor API][supervisor-api] also makes it possible to configure more advanced networking parameters, including hostname and proxy configuration.
+{{ $names.company.upper }} provides the ability to configure networking from inside your application containers and exposes a great deal of functionality to make this easier. One example is the [{{ $names.company.short }}-wifi-connect][wifi-connect] project, which allows the device to create its own WiFi access point that users can connect with to configure proper credentials. The {{ $names.company.lower }} [supervisor API][supervisor-api] also makes it possible to configure more advanced networking parameters, including hostname and proxy configuration.
 
 ### Multiple developers
 
@@ -115,15 +115,15 @@ The {{ $names.company.lower }} API includes functionality that allows for [fine-
 
 [{{ $names.engine.lower }}]:https://www.balena.io/
 [docker-compose]:https://docs.docker.com/compose/overview/
-[dev-vs-prod]:/reference/resinOS/overview/2.x/#dev-vs-prod-images
+[dev-vs-prod]:/reference/OS/overview/2.x/#dev-vs-prod-images
 [local-mode]:/learn/develop/local-mode
-[wifi-connect]:https://github.com/resin-io/resin-wifi-connect
+[wifi-connect]:{{ $links.githubMain }}/{{ $names.company.short }}-wifi-connect
 [supervisor-api]:/reference/supervisor/supervisor-api/#patch-v1-device-host-config
 [collaborators]:/learn/manage/account/#collaboration-management
 [ssh]:/learn/manage/ssh-access
-[custom-logging]:https://resin.io/blog/how-to-create-a-custom-logging-system-for-longer-log-retention/
+[custom-logging]:https://{{ $names.domain }}/blog/how-to-create-a-custom-logging-system-for-longer-log-retention/
 [preload]:/reference/cli/#preload-60-image-62-
-[staged-releases]:https://github.com/resin-io-playground/staged-releases
+[staged-releases]:{{ $links.githubMain }}-playground/staged-releases
 [tags]:/learn/manage/filters-tags/#device-tags
 [filters]:/learn/manage/filters-tags/#device-filters
 

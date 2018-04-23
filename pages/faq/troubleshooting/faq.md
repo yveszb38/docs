@@ -6,15 +6,15 @@ title: FAQs
 * [Can I use multiple containers?](#can-i-use-multiple-containers-)
 * [How do I push a new git repo to an Application](#how-do-i-push-a-new-git-repo-to-an-application-)
 * [Why does `/data` report weird usage?](#why-does-data-report-weird-usage-)
-* [What NTP servers do {{ $names.company.lower }} devices use?](#what-ntp-servers-do-resin-io-devices-use-)
-* [What Network Ports are required by {{ $names.company.lower }}?](#what-network-ports-are-required-by-resin-io-)
+* [What NTP servers do the devices use?](#what-ntp-servers-do-the-devices-use-)
+* [What Network Ports are required?](#what-network-ports-are-required-)
 * [Can I access /dev and things like GPIO from the container?](#can-i-access-dev-and-things-like-gpio-from-the-container-)
 * [Can I set a static IP address for my device?](#can-i-set-a-static-ip-address-for-my-device-)
 * [Why can't I SSH into or run code in older versions of the host OS?](#why-can-t-i-ssh-into-or-run-code-in-older-versions-of-the-host-os-)
 * [How can I forward my container ports?](#how-can-i-forward-my-container-ports-)
 * [Which data is persisted on devices across updates/power cycles?](#which-data-is-persisted-on-devices-across-updates-power-cycles-)
 * [Why does /data disappear when I move a device between applications?](#why-does-data-disappear-when-i-move-a-device-between-applications-)
-* [It appears that there is a centralized {{ $names.company.lower }} master running (in cloud) and agents running on devices. Is that accurate?](#it-appears-that-there-is-a-centralized-resin-io-master-running-in-cloud-and-agents-running-on-devices-is-that-accurate-)
+* [It appears that there is a centralized master running (in cloud) and agents running on devices. Is that accurate?](#it-appears-that-there-is-a-centralized-master-running-in-cloud-and-agents-running-on-devices-is-that-accurate-)
 * [What type of encryption do you use over OpenVPN? SSL/TLS/AES-256? Mutual key authentication? over SSH?](#what-type-of-encryption-do-you-use-over-openvpn-ssl-tls-aes-256-mutual-key-authentication-over-ssh-)
 * [What is the performance impact on the gateway device due to encryption?](#what-is-the-performance-impact-on-the-gateway-device-due-to-encryption-)
 * [How long does the update process run typically? For now it appears to be quick for small updates.](#how-long-does-the-update-process-run-typically-do-you-have-any-benchmark-data-for-now-it-appears-to-be-quick-for-small-updates-)
@@ -31,12 +31,12 @@ __Note:__ If you do not see an option to choose a starter or microservices appli
 If you are running a Docker-in-Docker setup, which builds a single application container on the {{ $names.company.lower }} servers but has a `docker-compose.yml` file at the root of the project, you'll want to rename the file to something like `dind-compose.yml`. Then when you run Docker Compose in your container, you can use the `-f` flag with the new file name: `docker-compose -f dind-compose.yml up`.
 
 ##### How do I push a new git repo to an application?
-If you have pushed a repository called `project-A` to your application and at a later stage you would like to push a new project called `project-B`, you can do this by adding the application remote (`git remote add resin <USERNAME>@git.resin.io:<USERNAME>/<APPNAME>.git`) to `project-B`'s local repository. You can then easily push `project-B` to your application by just doing `git push resin master -f`. The extra `-f` on the command forces the push and resets the git history on the git remote on {{ $names.company.lower }}'s backend. You should now have `project-B` running on all the devices in the application fleet. Note that once you have successfully switched to `project-B` you no longer need to add the `-f` on every push, for more info check out the docs on [forced git pushes](https://git-scm.com/docs/git-push#git-push--f).
+If you have pushed a repository called `project-A` to your application and at a later stage you would like to push a new project called `project-B`, you can do this by adding the application remote (`git remote add {{ $names.company.short }} <USERNAME>@git.{{ $names.domain }}:<USERNAME>/<APPNAME>.git`) to `project-B`'s local repository. You can then easily push `project-B` to your application by just doing `git push {{ $names.company.short }} master -f`. The extra `-f` on the command forces the push and resets the git history on the git remote on {{ $names.company.lower }}'s backend. You should now have `project-B` running on all the devices in the application fleet. Note that once you have successfully switched to `project-B` you no longer need to add the `-f` on every push, for more info check out the docs on [forced git pushes](https://git-scm.com/docs/git-push#git-push--f).
 
 ##### Why does /data report weird usage?
-On the device we have a writable data partition that uses all the free space remaining after reserving the required amount for the host os. This data partition contains the Docker images for the resin supervisor and the user applications so that they can be updated, along with containing the persistent `/data` for the application to use, this way it avoids reserving a specific amount of space for either images or data and then finding out that we have reserved too much or too little for one. So the space usage in `/data` being used but not accounted for will likely be due to the Docker images. (As a side note if you want the most accurate usage stats you should use `btrfs fi df /data` as `df` is not accurate for btrfs partitions).
+On the device we have a writable data partition that uses all the free space remaining after reserving the required amount for the host os. This data partition contains the Docker images for the {{ $names.company.lower }} device supervisor and the user applications so that they can be updated, along with containing the persistent `/data` for the application to use, this way it avoids reserving a specific amount of space for either images or data and then finding out that we have reserved too much or too little for one. So the space usage in `/data` being used but not accounted for will likely be due to the Docker images. (As a side note if you want the most accurate usage stats you should use `btrfs fi df /data` as `df` is not accurate for btrfs partitions).
 
-##### What NTP servers do {{ $names.company.lower }} devices use?
+##### What NTP servers do the devices use?
 Up to {{ $names.os.lower }} v2.0.6, the NTP service connects to the following time servers:
 
 - pool.ntp.org
@@ -52,7 +52,7 @@ Starting from {{ $names.os.lower }} v2.0.7, the devices connect to the following
 - 2.resinio.pool.ntp.org
 - 3.resinio.pool.ntp.org
 
-##### What network ports are required by {{ $names.company.lower }}?
+##### What network ports are required?
 In order for a {{ $names.company.lower }} device to get outside of the local network and connect to the {{ $names.company.lower }} API, there are a few core network requirements.
 
 {{ $names.company.upper }} makes use of the following ports:
@@ -64,7 +64,7 @@ In order for a {{ $names.company.lower }} device to get outside of the local net
 Each of these should work with outward only (and inward once outward connection established) firewall settings.
 
 Additionally, if the network your device is connecting to works with whitelisting, you should whitelist the following domains on port `80` and `443`:
-* `*.resin.io`
+* `*.{{ $names.domain }}`
 * `*.pubnub.com`
 
 ##### Can I access /dev and things like GPIO from the container?
@@ -125,12 +125,12 @@ The {{ $names.company.lower }} device supervisor needs to be able to access our 
 Generally, we try to follow good OPSEC practices for our systems. We support 2FA for user accounts and force all the connections to be over HTTPS. More details on our approach can be found on our [security page][security].
 
 ##### What does it mean when a device type is discontinued?
-Discontinued devices will no longer be actively supported by {{ $names.company.lower }}. This means we will no longer provide prebuilt versions of {{ $names.os.lower }} for these devices, and we will not be resolving any issues related to these boards. In addition, it will no longer be possible to create applications for these device types, although existing applications and their devices will still function. If you would like to keep your discontinued devices updated with the latest {{ $names.os.lower }} changes, you can [build your own](https://github.com/resin-os/meta-resin/blob/master/contributing-device-support.md) board-specific versions using our [open source repos](https://github.com/resin-os). Please contact sales@resin.io with any questions regarding continued device support.
+Discontinued devices will no longer be actively supported by {{ $names.company.lower }}. This means we will no longer provide prebuilt versions of {{ $names.os.lower }} for these devices, and we will not be resolving any issues related to these boards. In addition, it will no longer be possible to create applications for these device types, although existing applications and their devices will still function. If you would like to keep your discontinued devices updated with the latest {{ $names.os.lower }} changes, you can [build your own]({{ $links.githubOS }}/meta-resin/blob/master/contributing-device-support.md) board-specific versions using our [open source repos]({{ $links.githubOS }}). Please contact sales@{{ $names.domain }} with any questions regarding continued device support.
 
-[forums]:https://forums.resin.io/c/troubleshooting
+[forums]:https://forums.{{ $names.domain }}/c/troubleshooting
 [multicontainer]:/learn/develop/multicontainer
 [app-types]:/learn/manage/app-types
-[static-ip]:/reference/resinOS/network/2.x/#setting-a-static-ip
+[static-ip]:/reference/OS/network/2.x/#setting-a-static-ip
 [security]:/learn/welcome/security
 [persistent-storage]:/learn/develop/runtime/#persistent-storage
 [named-volumes]:/learn/develop/multicontainer/#named-volumes

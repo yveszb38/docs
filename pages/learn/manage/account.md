@@ -34,7 +34,7 @@ __Note:__ Two factor authentication will only be enabled once you have finished 
 
 ![Two Factor Authentication Tab, Configuring](/img/screenshots/2fa3.png)
 
-In order to use your phone/computer as your added layer of security you will need to download a free authenticator application. There are many available, but one that works well and has been successfully tested against [{{ $names.company.lower }}][resin] is [Google Authenticator][google-auth] - download it for [Android][google-auth-android] or [iOS][google-auth-ios].
+In order to use your phone/computer as your added layer of security you will need to download a free authenticator application. There are many available, but one that works well and has been successfully tested against {{ $names.company.lower }} is [Google Authenticator][google-auth] - download it for [Android][google-auth-android] or [iOS][google-auth-ios].
 
 Once installed, navigate to the barcode scanner:-
 
@@ -50,7 +50,7 @@ Once configured, you'll see a 6 digit generated code with a graphic beside it in
 
 Next you'll need to input the displayed code into the 'Pairing code' input on the preferences page.
 
-Once you've paired your authenticator to your [{{ $names.company.lower }}][resin] account you'll be all set up and the two factor authentication page will simply give you the option to disable it should you wish to later:-
+Once you've paired your authenticator to your {{ $names.company.lower }} account you'll be all set up and the two factor authentication page will simply give you the option to disable it should you wish to later:-
 
 __Note:__ It's best to wait for the countdown to show plenty of time remaining before doing this as the window during which the code is valid is rather short!
 
@@ -64,11 +64,10 @@ Now when you log in you will be prompted for the code displayed in your authenti
 * [Authy](https://www.authy.com)
 * [1Password](https://1password.com)
 
-[resin]:https://resin.io
 
-[signup]:https://dashboard.resin.io/signup
-[login]:https://dashboard.resin.io/login
-[prefs]:https://dashboard.resin.io/preferences?tab=details
+[signup]:https://dashboard.{{ $names.domain }}/signup
+[login]:https://dashboard.{{ $names.domain }}/login
+[prefs]:https://dashboard.{{ $names.domain }}/preferences?tab=details
 
 [2fa]:https://en.wikipedia.org/wiki/Two_factor_authentication
 [totp]:https://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm

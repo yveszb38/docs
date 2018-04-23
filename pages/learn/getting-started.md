@@ -68,4 +68,4 @@ These example projects will give you an idea of more things that can be done wit
 [terminal]:/learn/manage/ssh-access
 [local-mode]:/learn/develop/local-mode
 [multicontainer]:/learn/develop/multicontainer
-[link-to-signup]:https://dashboard.resin.io/signup
+[link-to-signup]:https://dashboard.{{ $names.domain }}/signup

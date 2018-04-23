@@ -1,6 +1,6 @@
 # Help, I bricked my Edison!
 
-If your Edison is unresponsive or for some bizarre reason, you want to restore your Edison to its unresinfied state, we've prepared a guide for you:
+If your Edison is unresponsive or for some bizarre reason, you want to restore your Edison to its default state, we've prepared a guide for you:
 
 ## Tools
 
@@ -40,7 +40,7 @@ You should now have a Edison running the factory default Yocto build from Intel.
 
 If you've had to follow this guide due to an issue with {{ $names.company.lower }}, please let us know so we can improve the experience!
 
-**Drop us a note at [{{ $names.company.lower }}/contact](https://resin.io/contact/)**
+**Drop us a note at [{{ $names.company.lower }}/contact](https://{{ $names.domain }}/contact/)**
 
 [edison-dl-page]:https://software.intel.com/en-us/iot/hardware/edison/downloads
 [dl-link]:http://downloadmirror.intel.com/25028/eng/edison-image-ww25.5-15.zip

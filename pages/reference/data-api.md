@@ -1,7 +1,7 @@
 # Data API Service
 
 ## Introduction
-Resin's Data API Service constitutes a central node in resin architecture, since it provides interconnection between resin services and communication with the database. At the same time, it exposes an HTTP interface, based on Open Data ([OData](http://www.odata.org)) format, that provides a means to the user to interact with resin resources and fetch or update information regarding their applications, devices and environment variables.
+{{ $names.company.upper }}'s rata API Service constitutes a central node in {{ $names.company.lower }} architecture, since it provides interconnection between {{ $names.company.lower }} services and communication with the database. At the same time, it exposes an HTTP interface, based on Open Data ([OData](http://www.odata.org)) format, that provides a means to the user to interact with {{ $names.company.lower }} resources and fetch or update information regarding their applications, devices and environment variables.
 
 This document aims to describe the endpoints that are provided by the Data API, as well as showing examples of their expected usage.
 
@@ -16,7 +16,7 @@ Building the full URLs for accessing resources requires to append the correspond
 
 ### Authentication
 
-All requests are authenticated with a [JSON web token](https://jwt.io/). The token can be retrieved from the [dashboard](https://dashboard.resin.io/preferences/details) and refreshed via the [API](#refresh-token).
+All requests are authenticated with a [JSON web token](https://jwt.io/). The token can be retrieved from the [dashboard](https://dashboard.{{ $names.domain }}/preferences/details) and refreshed via the [API](#refresh-token).
 
 ## Interacting with resources
 
@@ -27,7 +27,7 @@ All requests are authenticated with a [JSON web token](https://jwt.io/). The tok
 * Method: `GET`
 * cURL Example:
 ```
-curl "https://api.resin.io/whoami"
+curl "https://api.{{ $names.domain }}/whoami"
 -H "Content-Type: application/json"
 -H "Authorization: Bearer <auth token>"
 ```
@@ -102,7 +102,7 @@ curl -X POST '{{ $links.apiBase }}application'
 
 *The available device types are:*
 
-{{> "general/resinDeviceTypeNames"}}
+{{> "general/deviceTypeNames"}}
 
 
 #### Delete application

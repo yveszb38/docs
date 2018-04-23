@@ -81,15 +81,15 @@ Use the `volumes` field of the service to link a directory in your container to 
 ```
 version: '2'
 volumes: 
-    resin-data:
+    {{ $names.company.short }}-data:
 services:
     example:
         build: ./example
         volumes: 
-            - 'resin-data:/data'
+            - '{{ $names.company.short }}-data:/data'
 ```
 
-For devices upgraded from older versions of {{ $names.os.lower }} to v2.12.0 or higher, a link will automatically be created from the `/data` directory of the container to the `resin-data` named volume (similar to above). This ensures application behavior will remain consistent across host OS versions. One notable difference is that accessing this data via the host OS is done at `/var/lib/docker/volumes/<APP ID>_resin-data/_data`, rather than the `/mnt/data/resin-data/<APP ID>` location used with earlier host OS versions. 
+For devices upgraded from older versions of {{ $names.os.lower }} to v2.12.0 or higher, a link will automatically be created from the `/data` directory of the container to the `{{ $names.company.short }}-data` named volume (similar to above). This ensures application behavior will remain consistent across host OS versions. One notable difference is that accessing this data via the host OS is done at `/var/lib/docker/volumes/<APP ID>_{{ $names.company.short }}-data/_data`, rather than the `/mnt/data/{{ $names.company.short }}-data/<APP ID>` location used with earlier host OS versions. 
 
 ### Labels 
 
@@ -101,17 +101,17 @@ These labels are applied to a specific service with the `labels:` setting:
 
 ```
 labels:
-      io.resin.features.kernel-modules: '1'
-      io.resin.features.firmware: '1'
-      io.resin.features.dbus: '1'
-      io.resin.features.supervisor-api: '1'
-      io.resin.features.resin-api: '1'
-      io.resin.update.strategy: download-then-kill
-      io.resin.update.handover-timeout: ''
+      io.{{ $names.company.short }}.features.kernel-modules: '1'
+      io.{{ $names.company.short }}.features.firmware: '1'
+      io.{{ $names.company.short }}.features.dbus: '1'
+      io.{{ $names.company.short }}.features.supervisor-api: '1'
+      io.{{ $names.company.short }}.features.{{ $names.company.short }}-api: '1'
+      io.{{ $names.company.short }}.update.strategy: download-then-kill
+      io.{{ $names.company.short }}.update.handover-timeout: ''
 ```
 
 [docker-compose]:https://docs.docker.com/compose/overview/
-[simple-app]:https://github.com/resin-io-projects/multicontainer-getting-started
+[simple-app]:{{ $links.githubProjects }}/multicontainer-getting-started
 [compose-features]:https://docs.docker.com/compose/compose-file/compose-file-v2/
 [compose-support]:/reference/supervisor/docker-compose
 [depends-on]:https://docs.docker.com/compose/compose-file/compose-file-v2/#depends_on

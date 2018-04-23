@@ -34,15 +34,15 @@ For [multicontainer][multicontainer] applications (Microservices and Starter [ap
 In order to deploy code to your devices you must first ensure they are correctly connected to a {{ $names.company.lower }} application. See the [Getting Started Guide][getting-started] for details.
 
 Then simply add your {{ $names.company.lower }} endpoint to your [git][git] repository via `git
-remote add resin [application endpoint]`.
+remote add {{ $names.company.short }} [application endpoint]`.
 
 Whenever you subsequently need to push code to your devices, simply run
-`git push resin master`.
+`git push {{ $names.company.short }} master`.
 
 __Warning:__ The {{ $names.company.lower }} git repository **is not** intended as a code hosting solution, and we cannot guarantee the persistence of data in {{ $names.company.lower }} git remotes.
 
 If you want to push a different local git branch to your {{ $names.company.lower }} fleet all you need to do is:
-`git push resin my-local-branch:master`
+`git push {{ $names.company.short }} my-local-branch:master`
 
 ## Release logs
 
