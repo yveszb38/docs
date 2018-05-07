@@ -15,10 +15,6 @@ module.exports =
   beaglebone:
     black: "#{BB_PRODUCTS}/black"
     green: "#{BB_PRODUCTS}/green"
-  dashboard: DASHBOARD_URL
-  dashboardStaging: DASHBOARD_STAGING
-  mainSite = MAIN_SITE
-  forums = FORUMS
   githubMain: GITHUB_MAIN
   githubProjects: GITHUB_PROJECTS
   githubOS: GITHUB_OS
